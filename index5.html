@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fotos en Realidad Aumentada</title>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="debugUIEnabled: false;"
+    >
+      <!-- Entidad para agrupar las fotos -->
+      <a-entity 
+        gps-new-entity-place="latitude: -11.016141; longitude: -66.042912" 
+        rotation="-90 0 0" 
+      >
+        <!-- Foto tuya -->
+        <a-image
+          src="https://raw.githubusercontent.com/tu-usuario/mi-repositorio/main/imagenes/tu_foto.jpg"
+          position="0 0 0"
+          scale="1 1 1"
+        >
+        </a-image>
+
+        <!-- Foto de ella a 1 metro de distancia (aproximadamente) -->
+        <a-image
+          src="https://raw.githubusercontent.com/tu-usuario/mi-repositorio/main/imagenes/su_foto.jpg"
+          position="1 0 0"
+          scale="1 1 1"
+        >
+        </a-image>
+      </a-entity>
+
+      <a-camera gps-camera rotation-reader></a-camera>
+    </a-scene>
+  </body>
+</html>
